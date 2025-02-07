@@ -1,0 +1,30 @@
+.rootBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputBox {
+    margin-bottom: 20px;
+    padding: 8px 10px;
+    min-width: 500px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: large;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    h2{
+        margin: 0;
+        padding-right: 20px;   
+        font-size: x-large;
+        padding: 5PX; 
+    }
+    p{
+        margin: 4px 0 0 0;
+    }
+}
