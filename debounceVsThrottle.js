@@ -25,7 +25,7 @@ const updateDebounceText = debounce((text) => {
     debounceText.innerText = text;
 }, 1000);
 
-const updateThrottleText = throtte((text) => {
+const updateThrottleText = throttle((text) => {
     throtteText.innerText = text;
 }, 1000);
 
@@ -44,7 +44,7 @@ function debounce(updateText, delay = 1000) {
 }
 
 // Throttle fun declared
-function throtte(callback, delay = 1000) {
+function throttle(callback, delay = 1000) {
     let shouldWait = false;
     let waitingArgs = null;
 
@@ -68,6 +68,17 @@ function throtte(callback, delay = 1000) {
         shouldWait = true;
 
         setTimeout(timeoutFunc, delay);
+    };
+}
+
+function throttle_Easy(func, interval) {
+    let lastCall = 0;
+    return function (...args) {
+        const now = Date.now();
+        if (now - lastCall >= interval) {
+            lastCall = now;
+            func.apply(this, args);
+        }
     };
 }
 
